@@ -21,18 +21,33 @@
             return computerChoiceConverted;
             break;
           case 3:
-            computerChoiceConverted = "scissors"
+            computerChoiceConverted = "scissors";
             return computerChoiceConverted;
             break;
           default:
             computerChoiceConverted = "unknown";
-            console.log("Invalid selection made")
+            console.log("Invalid selection made");
         }
+      }
+      function getHumanChoice(input) {
+        const humanChoice = prompt("Enter input:")
 
-
+        switch (humanChoice) {
+          case "rock":
+            return humanChoice;
+            break;
+          case "paper":
+            return humanChoice;
+            break;
+          case "scissors":
+            return humanChoice;
+          default:
+            console.log("Please enter a proper input")
+        }
       }
 
       console.log(getComputerChoice());
+      console.log(getHumanChoice("rock"))
     </script>
   </body>
 </html>
