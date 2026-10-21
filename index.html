@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function getComputerChoice() {
+        let computerChoice = Math.floor(Math.random() * 3) + 1;
+        let computerChoiceConverted;
+
+        switch (computerChoice) {
+          case 1:
+            computerChoiceConverted = "rock";
+            return computerChoiceConverted;
+            break;
+          case 2:
+            computerChoiceConverted = "paper";
+            return computerChoiceConverted;
+            break;
+          case 3:
+            computerChoiceConverted = "scissors"
+            return computerChoiceConverted;
+            break;
+          default:
+            computerChoiceConverted = "unknown";
+            console.log("Invalid selection made")
+        }
+
+
+      }
+
+      console.log(getComputerChoice());
+    </script>
+  </body>
+</html>
