@@ -7,6 +7,9 @@
   </head>
   <body>
     <script>
+      let humanScore = 0;
+      let computerScore = 0;
+
       function getComputerChoice() {
         let computerChoice = Math.floor(Math.random() * 3) + 1;
         let computerChoiceConverted;
@@ -29,8 +32,9 @@
             console.log("Invalid selection made");
         }
       }
+
       function getHumanChoice(input) {
-        const humanChoice = prompt("Enter input:")
+        const humanChoice = prompt("Enter input:")?.trim().toLowerCase();
 
         switch (humanChoice) {
           case "rock":
@@ -42,15 +46,38 @@
           case "scissors":
             return humanChoice;
           default:
-            console.log("Please enter a proper input")
+            console.log("Please enter a proper input");
         }
       }
 
-      let humanScore = 0;
-      let computerScore = 0;
+      function playRound(humanChoice, computerChoice) {
+        let winner = undefined;
 
-      console.log(getComputerChoice());
-      console.log(getHumanChoice("rock"));
+        const winningMoves = {
+          rock: "scissors",
+          paper: "rock",
+          scissors: "paper",
+        };
+
+        if (humanChoice === computerChoice) {
+          return "Tie";
+        } else if (winningMoves[humanChoice] === computerChoice) {
+          humanScore++;
+          return "Player wins";
+        } else if (winningMoves[computerChoice] === humanChoice) {
+          computerScore++;
+          return "Computer wins";
+        } else {
+          return "INVALID";
+        }
+      }
+
+      const humanSelection = getHumanChoice();
+      const computerSelection = getComputerChoice();
+
+      console.log(`Player choice: ${humanSelection}`);
+      console.log(`Computer choice: ${computerSelection}`);
+      console.log(playRound(humanSelection, computerSelection));
     </script>
   </body>
 </html>
