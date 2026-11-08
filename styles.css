@@ -1,0 +1,24 @@
+button {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  padding: 10px 30px;
+  justify-content: center;
+  align-self: center;
+  align-content: center;
+  font-size: 25px;
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+  border: none;
+}
+
+.buttons-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  background-color: rgba(12, 87, 40, 0.658);
+  padding: 20px;
+  border-radius: 15px;
+}

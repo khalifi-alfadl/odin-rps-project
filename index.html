@@ -4,103 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <script>
-      function getComputerChoice() {
-        let computerChoice = Math.floor(Math.random() * 3) + 1;
-        let computerChoiceConverted;
+    <div class="buttons-div">
+      <button class="rock-button">Rock</button>
+      <button class="paper-button">Paper</button>
+      <button class="scissors-button">Scissors</button>
+    </div>
 
-        switch (computerChoice) {
-          case 1:
-            computerChoiceConverted = "rock";
-            return computerChoiceConverted;
-            break;
-          case 2:
-            computerChoiceConverted = "paper";
-            return computerChoiceConverted;
-            break;
-          case 3:
-            computerChoiceConverted = "scissors";
-            return computerChoiceConverted;
-            break;
-          default:
-            computerChoiceConverted = "unknown";
-            console.log("Invalid selection made");
-        }
-      }
-
-      function getHumanChoice(input) {
-        const humanChoice = prompt("Enter input:")?.trim().toLowerCase();
-
-        switch (humanChoice) {
-          case "rock":
-            return humanChoice;
-            break;
-          case "paper":
-            return humanChoice;
-            break;
-          case "scissors":
-            return humanChoice;
-          default:
-            console.log("Please enter a proper input");
-        }
-      }
-
-      function playGame() {
-        let humanScore = 0;
-        let computerScore = 0;
-
-        function playRound(humanChoice, computerChoice) {
-          let winner = undefined;
-
-          const winningMoves = {
-            rock: "scissors",
-            paper: "rock",
-            scissors: "paper",
-          };
-
-          if (humanChoice === computerChoice) {
-            return "Tie";
-          } else if (winningMoves[humanChoice] === computerChoice) {
-            humanScore++;
-            return "Player wins";
-          } else if (winningMoves[computerChoice] === humanChoice) {
-            computerScore++;
-            return "Computer wins";
-          } else {
-            return "INVALID";
-          }
-        }
-
-        for (let i = 0; i < 5; i++) {
-          playRound();
-
-          const humanSelection = getHumanChoice();
-          const computerSelection = getComputerChoice();
-
-          console.log(`Round ${i + 1}:`);
-          console.log(`Player chose: ${humanSelection}`);
-          console.log(`Computer chose: ${computerSelection}`);
-          console.log(playRound(humanSelection, computerSelection));
-          console.log(
-            `Current Score - Player: ${humanScore} | Computer: ${computerScore}`,
-          );
-        }
-
-        if (humanScore > computerScore) {
-          console.log(
-            `You won the game. Final Score: ${humanScore} - ${computerScore}`,
-          );
-        } else if (computerScore > humanScore) {
-          console.log(`You lost loser and the computer won! Final score: ${computerScore} - ${humanScore}`)
-        }
-        else {
-          console.log(`Tie. Final score: ${humanScore} - ${computerScore}`)
-        }
-      }
-
-      console.log(playGame());
-    </script>
+    <div class="results"></div>
   </body>
 </html>
