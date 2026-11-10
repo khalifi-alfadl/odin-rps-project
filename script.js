@@ -15,26 +15,8 @@ let humanScore = 0;
 let computerScore = 0;
 
 function getComputerChoice() {
-  let computerChoice = Math.floor(Math.random() * 3) + 1;
-  let computerChoiceConverted;
-
-  switch (computerChoice) {
-    case 1:
-      computerChoiceConverted = "rock";
-      return computerChoiceConverted;
-      break;
-    case 2:
-      computerChoiceConverted = "paper";
-      return computerChoiceConverted;
-      break;
-    case 3:
-      computerChoiceConverted = "scissors";
-      return computerChoiceConverted;
-      break;
-    default: 
-      computerChoiceConverted = "unknown";
-      console.log("Invalid selection made");
-  }
+  const choices = ["rock", "paper", "scissors"];
+  return choices[Math.floor(Math.random() * choices.length)];
 }
 
 function playRound(humanChoice, computerChoice) {
