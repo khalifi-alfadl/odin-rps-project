@@ -31,26 +31,9 @@ function getComputerChoice() {
       computerChoiceConverted = "scissors";
       return computerChoiceConverted;
       break;
-    default:
+    default: 
       computerChoiceConverted = "unknown";
       console.log("Invalid selection made");
-  }
-}
-
-function getHumanChoice(input) {
-  const humanChoice = prompt("Enter input:")?.trim().toLowerCase();
-
-  switch (humanChoice) {
-    case "rock":
-      return humanChoice;
-      break;
-    case "paper":
-      return humanChoice;
-      break;
-    case "scissors":
-      return humanChoice;
-    default:
-      console.log("Please enter a proper input");
   }
 }
 
