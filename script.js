@@ -1,6 +1,18 @@
-let rockBtn = document.querySelector(".rock-button");
-let paperBtn = document.querySelector(".paper-button");
-let scissorsBtn = document.querySelector(".scissors-button");
+// main button querySelectors
+const rockBtn = document.querySelector(".rock-button");
+const paperBtn = document.querySelector(".paper-button");
+const scissorsBtn = document.querySelector(".scissors-button");
+
+//querySelectors inside resultsDiv
+const resultsDiv = document.querySelector(".results");
+
+const roundOutcome = resultsDiv.querySelector(".round-outcome");
+const scoreboard = resultsDiv.querySelector("scoreboard");
+const winnerAnnouncement = resultsDiv.querySelector("winner-announcement");
+
+//scorekeepers
+let humanScore = 0;
+let computerScore = 0;
 
 function getComputerChoice() {
   let computerChoice = Math.floor(Math.random() * 3) + 1;
@@ -65,9 +77,6 @@ function playRound(humanChoice, computerChoice) {
 }
 
 function playGame() {
-  let humanScore = 0;
-  let computerScore = 0;
-
   for (let i = 0; i < 5; i++) {
     playRound();
 
