@@ -105,6 +105,17 @@ function playGame() {
   }
 }
 
+function updateResultsDisplay(roundMessage) {
+  roundOutcome.textContent = roundMessage;
+  scoreboard.textContent = `Player: ${humanScore} | Computer: ${computerScore}`;
+
+  if (humanScore === 5) {
+    winnerAnnouncement.textContent = "Match over: You won the game.";
+  } else if (computerScore === 5) {
+    winnerAnnouncement.textContent = "Match over: The computer won the game.";
+  }
+}
+
 //PLACE HOLDER EVENT LISTENERS//
 rockBtn.addEventListener("click", () => alert());
 paperBtn.addEventListener("click", () => alert());
