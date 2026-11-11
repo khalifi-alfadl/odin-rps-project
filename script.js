@@ -30,15 +30,15 @@ function getComputerChoice() {
  * @returns {void}
  */
 function playRound(humanChoice) {
+  if (humanScore >= 5 || computerScore >= 5) {
+    return;
+  }
+
   const winningMoves = {
     rock: "scissors",
     paper: "rock",
     scissors: "paper",
   };
-
-  if (humanScore >= 5 || computerScore >= 5) {
-    return;
-  }
 
   const computerChoice = getComputerChoice();
   let message = "";
@@ -58,9 +58,9 @@ function playRound(humanChoice) {
 
 /**
  * Updates the results display with latest summary, running status and endgame score.
- * 
+ *
  * @param {string} roundMessage
- * @returns {void} 
+ * @returns {void}
  */
 function updateResultsDisplay(roundMessage) {
   roundOutcome.textContent = roundMessage;
