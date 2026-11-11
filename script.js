@@ -19,26 +19,41 @@ function getComputerChoice() {
   return choices[Math.floor(Math.random() * choices.length)];
 }
 
-function playRound(humanChoice, computerChoice) {
-  let winner = undefined;
-
+/**
+ * Plays a single round of RPS against the user.
+ *
+ * updates the display message after each round.
+ *
+ * has a safeguard that stops the function if either humanScore or computerScore reaches 5.
+ *
+ * @param { "rock" | "paper" | "scissors" } humanChoice
+ * @returns {void}
+ */
+function playRound(humanChoice) {
   const winningMoves = {
     rock: "scissors",
     paper: "rock",
     scissors: "paper",
   };
 
+  if (humanScore >= 5 || computerScore >= 5) {
+    return;
+  }
+
+  const computerChoice = getComputerChoice();
+  let message = "";
+
   if (humanChoice === computerChoice) {
-    return "Tie";
+    updateResultsDisplay(`Tie. Both picked ${humanChoice}`);
   } else if (winningMoves[humanChoice] === computerChoice) {
     humanScore++;
-    return "Player wins";
+    message = `User won. User picked ${humanChoice} and computer picked ${computerChoice}`;
   } else if (winningMoves[computerChoice] === humanChoice) {
     computerScore++;
-    return "Computer wins";
-  } else {
-    return "INVALID";
+    message = `Computer won. User picked ${humanChoice} and computer picked ${computerChoice}`;
   }
+
+  updateResultsDisplay(message);
 }
 
 function updateResultsDisplay(roundMessage) {
