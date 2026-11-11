@@ -56,6 +56,12 @@ function playRound(humanChoice) {
   updateResultsDisplay(message);
 }
 
+/**
+ * Updates the results display with latest summary, running status and endgame score.
+ * 
+ * @param {string} roundMessage
+ * @returns {void} 
+ */
 function updateResultsDisplay(roundMessage) {
   roundOutcome.textContent = roundMessage;
   scoreboard.textContent = `Player: ${humanScore} | Computer: ${computerScore}`;
