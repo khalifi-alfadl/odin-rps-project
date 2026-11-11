@@ -7,8 +7,8 @@ const scissorsBtn = document.querySelector(".scissors-button");
 const resultsDiv = document.querySelector(".results");
 
 const roundOutcome = resultsDiv.querySelector(".round-outcome");
-const scoreboard = resultsDiv.querySelector("scoreboard");
-const winnerAnnouncement = resultsDiv.querySelector("winner-announcement");
+const scoreboard = resultsDiv.querySelector(".scoreboard");
+const winnerAnnouncement = resultsDiv.querySelector(".winner-announcement");
 
 //scorekeepers
 let humanScore = 0;
