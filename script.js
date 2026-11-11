@@ -74,6 +74,6 @@ function updateResultsDisplay(roundMessage) {
 }
 
 //PLACE HOLDER EVENT LISTENERS//
-rockBtn.addEventListener("click", () => alert());
-paperBtn.addEventListener("click", () => alert());
-scissorsBtn.addEventListener("click", () => alert());
+rockBtn.addEventListener("click", () => playRound("rock"));
+paperBtn.addEventListener("click", () => playRound("paper"));
+scissorsBtn.addEventListener("click", () => playRound("scissors"));
