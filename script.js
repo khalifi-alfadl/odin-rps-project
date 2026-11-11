@@ -44,7 +44,7 @@ function playRound(humanChoice) {
   let message = "";
 
   if (humanChoice === computerChoice) {
-    updateResultsDisplay(`Tie. Both picked ${humanChoice}`);
+    message = `Tie. Both picked ${humanChoice}`;
   } else if (winningMoves[humanChoice] === computerChoice) {
     humanScore++;
     message = `User won. User picked ${humanChoice} and computer picked ${computerChoice}`;
