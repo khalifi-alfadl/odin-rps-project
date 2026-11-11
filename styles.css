@@ -18,6 +18,7 @@ button {
   flex-direction: row;
   justify-content: center;
   gap: 20px;
+  margin: 10px;
   background-color: rgba(12, 87, 40, 0.658);
   padding: 20px;
   border-radius: 15px;
