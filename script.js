@@ -41,35 +41,6 @@ function playRound(humanChoice, computerChoice) {
   }
 }
 
-function playGame() {
-  for (let i = 0; i < 5; i++) {
-    playRound();
-
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
-
-    console.log(`Round ${i + 1}:`);
-    console.log(`Player chose: ${humanSelection}`);
-    console.log(`Computer chose: ${computerSelection}`);
-    console.log(playRound(humanSelection, computerSelection));
-    console.log(
-      `Current Score - Player: ${humanScore} | Computer: ${computerScore}`,
-    );
-  }
-
-  if (humanScore > computerScore) {
-    console.log(
-      `You won the game. Final Score: ${humanScore} - ${computerScore}`,
-    );
-  } else if (computerScore > humanScore) {
-    console.log(
-      `You lost loser and the computer won! Final score: ${computerScore} - ${humanScore}`,
-    );
-  } else {
-    console.log(`Tie. Final score: ${humanScore} - ${computerScore}`);
-  }
-}
-
 function updateResultsDisplay(roundMessage) {
   roundOutcome.textContent = roundMessage;
   scoreboard.textContent = `Player: ${humanScore} | Computer: ${computerScore}`;
